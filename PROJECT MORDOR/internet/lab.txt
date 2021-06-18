@@ -1,0 +1,37 @@
+HostA = 448
+Palantir-Router-A = 449
+HostB = 450
+
+FTP-Server = 451
+-----------------------------
+Palantir-Router-B = 455
+CloudPC = 454
+
+LanListener = 456
+CloudListener = 457
+
+LANClient.connect(side, id, key)
+LANClient.send(id, message)
+
+
+
+NAME: Palantir
+LAN key: eyeofsauron
+WAN key: brainofsauron
+
+
+Palantir-ASBR = 495
+Server-Edge-Router = 493
+Master-FTP-Server = 490
+Hosts-Edge-Router = 491
+Switch-Sauron = 489
+
+
+rednet.open("back")
+os.loadAPI("LANClient")
+LANClient.connect("back", 495, "eyeofsauron")
+
+while true do
+  id, msg = LANClient.receive()
+  print("ID: "..id.." sent packet "..msg)
+end

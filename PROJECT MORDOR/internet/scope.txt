@@ -1,0 +1,70 @@
+The scope of this project is to create the internet.
+In other words, there is going to be a structured system of components to create a network that will be used by the entire server.
+To create this system, there will need to be an entrance facility, a telecommunications closet, and an equipment room, as well as any necessary radio towers
+a point of demarcation must exist to denote the switch in ownership of infrastructure.
+The infrastructure will be an "Infrastructure As A Service" cloud storage model, where each player will be able to access a set amount of computers and disk drives
+there will be an additional set of computers that act as "servers" and any additional routing equipment if it need be installed.
+The system must be scalable to include additional players or add more storage space if need be.
+The system must be secure so that players cannot modify other players cloud space, personal computers, or servers.
+program name will be Palantir
+other considered names are Azrael, The Eye, Brain of Sauron, and Balor
+
+
+snippets for any books:
+--
+...And a shadow cast over his eyes, the wrinkles in his face became more prominent as he hauntingly stared at you, his deathly gaze piercing men's hearts.
+"THERE'S NOTHING THERE."
+--
+EVERY TIME YOU GO TO SLEEP I CAN FEEL MY BODY TORN APART ATOM BY ATOM
+--
+Your time is much shorter than most...
+Your days ar marked, your timeline is set...
+There's little you can do...
+But there's still SOMETHING...
+A shadow looms over your soul, waiting... Patiently... waiting...
+It's him... He's coming for you... He's coming to take you away... You can feel him when you sleep, can't you?
+You can feel his eyes on you as you lay in bed at night... You can feel his breath on your neck as you walk away... You can hear his whispers calling out... But you never know what's real and what isn't.
+I see him hovering above your face as you sleep... A malignant grin from ear to ear...
+He watches you so close... He waits for you to come home every time you leave.... He's in your home, attached to you, on your back... He won't leave you alone, he wants you...
+When you're asleep, he will enter your mind... You will see him, he will be there, waiting... Wanting to take you away, to lure you away... Into a false... sense... of... security.
+You cannot trust him... You cannot take his hand... You cannot listen to his words... For if you do... you will not wake up...
+He will drag your soul off to another realm... He will carry you through the darkness, into the void... Your spirit will hang in purgatory... Forever lost, forever wandering, alone...
+It's not too late, however... Though when you sleep, you will see him... You must turn away... You must try your best to awaken...
+For if you wait too long... You will be his... And you will never come back to your body... ...But he will...
+You msut find the object of his power... Something in your home that you feel uneasy about... It may not belong to you... It was brought into your life against your will...
+Find it, and get rid of it... It's your only hope of getting rid of the demon.
+
+
+
+
+
+
+ ,--.
+( () )
+ `--'
+
+
+ ( () )
+
+
+
+
+
+                     ___.-------.___
+                 _.-' ___.--;--.___ `-._
+              .-' _.-'  /  .+.  \  `-._ `-.
+            .' .-'      |-|-o-|-|      `-. `.
+           (_ <O__      \  `+'  /      __O> _)
+             `--._``-..__`._|_.'__..-''_.--'
+                   ``--._________.--''
+    ____  _____  ____    ____       _       _______
+   |_   \|_   _||_   \  /   _|     / \     |_   __ \
+     |   \ | |    |   \/   |      / _ \      | |__) |
+     | |\ \| |    | |\  /| |     / ___ \     |  ___/
+    _| |_\   |_  _| |_\/_| |_  _/ /   \ \_  _| |_
+   |_____|\____||_____||_____||____| |____||_____|
+
+
+
+I can probably just use draw functions on an advanced computer to replicate the sauron eye from the tower.
+"I SEE YOU."

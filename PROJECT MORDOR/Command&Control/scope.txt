@@ -1,0 +1,4 @@
+The scope of this project is to have a command and control program that can remotely control turtles and other computers.
+the amount of control can be many things, from direct remote control to simply running commands and programs, as well as obtaining feedback.
+In other words, this is a master control terminal.
+The name of this program will be called Overlord.

@@ -1,0 +1,9 @@
+The scope of this project is to create a power plant
+The power plant will have monitors display the following:
+- the total amount of power that is being stored
+- the amount of power that is being used
+- the amount of power that is being generated.
+
+This power plant will become the centerpiece of all industrial operations and machinery, which will become vital to the inventory management terminal.
+
+Later on when it is expanded, there can be a power system where players can rent out power and they are charged for how much power is used.

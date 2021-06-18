@@ -1,0 +1,13 @@
+The scope of this project is to create a network of resonant resource caches.
+A computer, or network of computers, will count all of the total resources and display this as a table {QTY, ITEM} on a monitor.
+There will be a search function in order to filter desired results.
+In addition, there will be an INPUT and an OUTPUT chest.
+As expected, the input chest will be used to place items into the network, and the output chest will be used to take items out.
+Since resonant caches can only store x10,000 items, the construction will need a scalable design.
+There will need to be massive machine infrastructure from each mod to support crafting each item.
+Most of the work is in the actual building and creation of the network itself.
+
+the system will need to be able to sort items physically as well as in the form of information.
+There must also exist crafting turtles to craft some of the objects.
+The design must be modular to benefit the community. It should be able to define machines and identify which crafting recipes are necessary.
+The system should be able to take a bank of items and identify what is craftable/smeltable/transformative.

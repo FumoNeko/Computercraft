@@ -1,0 +1,4 @@
+The scope of this project is to create a Global Positioning System.
+There is in fact already support for coordinates, however, these coordinates are only relative to the turtle.
+If we create a GPS server and a GPS client, set the coordinates of the server, and then do some math to calculate the position of the turtle
+we can create a working GPS system.

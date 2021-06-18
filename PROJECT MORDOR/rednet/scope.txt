@@ -1,0 +1,3 @@
+The scope of this project is to create networking infrastructure to support
+routing, switching, sending, and receiving of messages that are required by programs.
+http://www.computercraft.info/forums2/index.php?/topic/14794-somewhat-common-routing-framework-v31-mesh-networking-protocol-thing/
