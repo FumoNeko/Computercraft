@@ -1,0 +1,54 @@
+--Sending messages
+
+-- rednet.open("side") opens specified side for rednet communications.
+-- valid sides are left, right, top, bottom, front, back
+rednet.open("right")
+-- rednet.broadcast("string") sends a message to all computers listening.
+rednet.broadcast("hello")
+--rednet.send(id, "string") sends a message to the recipient computer with ID id.
+rednet.send(34, "hello computer 34!")
+
+--Receiving messages
+variable = peripheral.wrap("right") --wraps peripheral on right side
+rednet.open("left")
+
+while true do
+  id, message = rednet.receive()
+    if id == 35 and message == "fire" then
+      variable.launch(1, math.random(1,8), math.random(1,8), math.random(1,8))
+    end
+end
+
+--this program listens only a single time and then stops.
+rednet.open("left")
+local event, id, msg, ProtocolOrDistance = os.pullEvent("rednet_message")
+--if
+--if msg == "boi" then will do things only if msg = boi
+print("ID: "..id.." Message: "..msg)
+--don't know how to close else statement.
+
+
+-- This program listens nonstop
+rednet.open("left")
+
+while true do
+  id, msg = rednet.receive()
+  print("ID: "..id.." Message: "..msg)
+end
+
+-- This program listens until a true value is achieved In this case, the msg is "boi"
+rednet.open("left")
+local event, id, msg, ProtocolOrDistance = os.pullEvent("rednet_message")
+local desiredRednet = false
+
+repeat
+  -- body...
+  if msg == "boi"
+  then desiredRednet = true
+  end
+until desiredRednet == true
+
+if desiredRednet == true
+then
+print("ID: "..id.." Message: "..msg)
+end

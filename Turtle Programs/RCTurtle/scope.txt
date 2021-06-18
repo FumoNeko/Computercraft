@@ -1,0 +1,4 @@
+The scope of this project is to create a remote-controlled turtle with a visual peripheral.
+The turtle will run live commands run by a user instead of running a script.
+The keys "WASD", "SPACEBAR", and "SHIFT" will be macro'd to FORWARD, LEFT, BACK, RIGHT, UP, and DOWN.
+The use case scenario of the turtle is allowing for remote exploration or other purposes i.e. pranks, griefing, etc.

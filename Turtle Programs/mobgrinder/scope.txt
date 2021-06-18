@@ -1,0 +1,3 @@
+The scope of this project is to create a simple mob grinder turtle.
+The mob grinder will be the classic mob grinder, with the height adjusted for the health values from DangerRPG
+an attack turtle will sit at the bottom and kill the mob? (research must be done on this topic for mob xp and loot drops.)

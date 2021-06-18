@@ -1,0 +1,4 @@
+-- redstone.output(side, true/false)
+--true will put redstone to an ON state
+--false will put redstone to an OFF state
+redstone.setOutput("right", true)

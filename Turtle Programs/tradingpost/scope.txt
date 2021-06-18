@@ -1,0 +1,51 @@
+The scope of this project is to allow for trade between two players. Player A has a chest and Player B has a chest.
+Both players are separated on opposite sides with solid wall in between, enclosed by Iron doors, to prevent stealing.
+When a player is inside a room, no other players can be inside that room. Room A, Room B.
+Intermediary turtles moderate the trade. Both players have computer interfaces that show them what they are offering, and what the other player is offering.
+When both players accept the trade, the items will be switched from each chest.
+When one player denies the trade, the trade is cancelled.
+Optionally, a chat system can be installed to prevent clogging the server chat.
+
+Program name: Ozroth trading post.
+
+other idea, WHILE program is running, make iron door SHUT.
+when program is DONE, OPEN iron door.
+
+Diagram:
+traderA ID = 425
+traderB ID = 426
+tradingpostServer ID = 427
+opTradeBot ID = 424
+traderA is booted
+traderB is booted
+tradingpostServer is booted
+opTradeBot is booted
+traderA demands that playerA inputs an item
+traderB demands that playerB inputs an item
+playerA inputs item into chest
+playerB inputs item into chest
+playerA inputs command "Offer"
+playerB inputs command "Offer"
+traderA does rednet.send("427, offerA")
+traderB does rednet.send("427, offerB")
+tradingpostServer does rednet.receive("425")
+tradingpostServer does rednet.receive("426")
+tradingpostServer does rednet.send("424, offerA")
+tradingpostServer does rednet.send("424, offerB")
+opTradeBot does rednet.receive("427")
+opTradeBot checks chest of offerA, scans items, and interprets data
+opTradeBot checks chest of offerB, scans items, and interprets data
+opTradeBot sends this data back with rednet.send("427, dataA")
+opTradeBot sends this data back with rednet.send("427, dataB")
+tradingpostServer receives this data, and sends it to rednet.send("426, dataA")
+tradingpostServer receives this data, and sends it to rednet.send("425, dataB")
+traderB receives this data, then displays it on the screen.
+traderA receives this data, then displays it on the screen.
+-- if either trader does command "decline" then
+restart
+--
+if both traders do command "accept" then
+opTradeBot places traderA's items into chest "top"
+opTradeBot places traderB's items into chest "bottom"
+opTradeBot places chest "top" items into traderB's chest
+opTradeBot places chest "bottom" items into traderA's chest.

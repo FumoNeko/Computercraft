@@ -1,0 +1,6 @@
+pwn all the doorlock noobs.
+a rednet sniffer that logs communications over rednet.
+Can be used to sniff insecure passwords and gain access to places which you do not belong.
+Can also be used to debug rednet communications.
+
+This program is a sniffer and therefore cannot be used to bypass encryption.

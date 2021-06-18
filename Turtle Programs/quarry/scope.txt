@@ -1,0 +1,10 @@
+The scope of this project is to create a quarry system with a network of turtles.
+There are 2 chests. a Fuel chest, and an output chest.
+First, a large hole is created in the ground, then the turtles dig out material until they get full.
+When they are full, they return and place items in the output chest, then return to mining until a specific amount of cycles are done.
+When they are done, return to home position.
+Calculate fuel required.
+If not enough fuel, abort operation.
+If out of fuel while mining, refuel.
+The system should be able to adapt to situations where it must either dig or mine.
+Perhaps these turtles should not be wireless but be equipped with a shovel and a pick?

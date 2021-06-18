@@ -1,0 +1,3 @@
+The scope of this project is to tell a turtle to go home.
+The turtle must be able to set a position of coordinates as home, then navigate there when the program is run.
+A program must be able to call this program as a function.

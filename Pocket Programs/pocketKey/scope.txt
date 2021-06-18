@@ -1,0 +1,1 @@
+The scope of this project is to create a wireless PDA doorlock with a redstone mechanism that activates if a valid pocket computer is in range

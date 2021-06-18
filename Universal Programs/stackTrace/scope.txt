@@ -1,0 +1,5 @@
+forum post:
+https://www.computercraft.info/forums2/index.php?/topic/27844-trace-simple-stack-traces-for-errors/page__hl__download__fromsearch__1
+the scope of this program is basically an error catcher.
+Allows you to see more of the error and why a program errors instead of just getting a shitty generic error message
+code is here: https://pastebin.com/CYQp63kb

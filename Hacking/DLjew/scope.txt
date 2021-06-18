@@ -1,0 +1,3 @@
+The scope of this program is to simply download all programs off of a target machine.
+This can be done through taking control of a computer's remote shell via rednet
+or by actually being on the host machine and sending the payload to a server that will save the data.

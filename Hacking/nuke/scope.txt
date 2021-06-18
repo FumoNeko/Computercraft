@@ -1,0 +1,1 @@
+This program deletes all files on a target machine.

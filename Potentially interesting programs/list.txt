@@ -1,0 +1,58 @@
+OneOS - https://www.computercraft.info/forums2/index.php?/topic/17286-oneos-version-2-the-all-in-one-operating-system/
+
+TE Energy cell monitor - https://www.computercraft.info/forums2/index.php?/topic/20055-te-energy-cellenderio-capacitor-bank-power-monitor-program/
+
+ShEdit - https://www.computercraft.info/forums2/index.php?/topic/29308-shedit-an-editor-with-proper-syntax-highlighting/
+
+Elliptic curve cryptography - https://www.computercraft.info/forums2/index.php?/topic/29803-elliptic-curve-cryptography/
+
+(interested in database programs, search results did not yield many good results. I believe I found a spreadsheet program though.)
+
+Milo - http://www.computercraft.info/forums2/index.php?/topic/29761-milo-crafting-and-inventory-system/  this program is VERY good inventory management https://www.youtube.com/watch?v=l5eLVlp1WN8
+
+another good thing to note is that turtles can interact with minecart chests... good to know.
+
+Spreadsheet: https://www.computercraft.info/forums2/index.php?/topic/26725-speadersheet-program-updated/page__hl__download__fromsearch__1 - a good starting point for making tables.
+
+net shell: http://www.computercraft.info/forums2/index.php?/topic/6472-nsh-now-with-previous-session-resume/page__hl__download
+
+powergraph - https://www.computercraft.info/forums2/index.php?/topic/26076-powergraph-displays-stored-energy-with-a-graph/page__hl__download__fromsearch__1
+
+ftp - https://www.computercraft.info/forums2/index.php?/topic/26022-fserv-file-server/page__hl__download__fromsearch__1
+
+encryptfs - https://www.computercraft.info/forums2/index.php?/topic/26728-encryptfs-secure-full-disk-encryption-for-computercraft/page__hl__download__fromsearch__1
+
+far, another remote shell - https://www.computercraft.info/forums2/index.php?/topic/27077-far-actual-remote-shell-for-cc/page__hl__download__fromsearch__1
+
+redstone master control - http://www.computercraft.info/forums2/index.php?/topic/18786-wire-redstone-master-control-for-your-base/page__hl__download
+
+shark html websites - https://www.computercraft.info/forums2/index.php?/topic/29115-shark-a-site-browser-for-cc/page__hl__download__fromsearch__1
+
+Secure Access Server (unencrypted RADIUS server) - https://www.computercraft.info/forums2/index.php?/topic/29165-secure-access-server-sas-my-first-actual-program/page__hl__download__fromsearch__1
+server: https://pastebin.com/q52DWUgN
+client: https://pastebin.com/3C37zJ8s
+
+redstone wireless control - https://www.computercraft.info/forums2/index.php?/topic/17890-wirelesscontrol-control-your-base-with-wireless-redstone-over-rednet/
+
+wood chopper - http://www.computercraft.info/forums2/index.php?/topic/7686-ultimate-wood-chopper-095-prerelease-bsession-persistent/
+
+auto turtle programmer - https://www.computercraft.info/forums2/index.php?/topic/12485-smart-programmer-021-easily-create-loopable-programs-w-build-in-persistence/
+code: https://pastebin.com/3T0cBtKi
+
+turtle interface - https://www.computercraft.info/forums2/index.php?/topic/11882-turtle-interactions-as-menu/
+pastebin: https://pastebin.com/2KYrbQqN
+
+game: https://www.computercraft.info/forums2/index.php?/topic/13332-planetz-under-gravity-game030advanced-computer-version-available/page__hl__unobtanium__fromsearch__1
+
+
+turtleAPI - https://www.computercraft.info/forums2/index.php?/topic/13206-eltrut-api-movementinventoryon-screen/page__hl__eltrut__fromsearch__1
+code: https://pastebin.com/9MKEWafV - this will help me understand how to create my own API's.
+
+tradingpost - http://www.computercraft.info/forums2/index.php?/topic/13110-turtle-trading-station-030/
+
+
+Common Routing Framework - http://www.computercraft.info/forums2/index.php?/topic/14794-somewhat-common-routing-framework-v31-mesh-networking-protocol-thing/
+VERY useful for networking things.
+
+rednet api - http://www.computercraft.info/forums2/index.php?/topic/1708-lyqydnet-rednet-api/
+other common routing tools

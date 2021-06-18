@@ -1,0 +1,6 @@
+atom beautify, CTRL+SHIFT+P beautify lua
+https://atom.io/packages/atom-beautify#language-support
+
+autocomplete-plus
+CTRL+Space = show suggestions
+tab = autocomplete

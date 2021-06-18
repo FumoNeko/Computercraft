@@ -1,0 +1,3 @@
+The scope of this project is to create a port scanner for rednet to see which ports are open in the vicinity.
+Scan for potential targets.
+Now you can finally see why your farming turtle is moving on it's own.

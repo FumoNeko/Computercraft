@@ -1,0 +1,4 @@
+The scope of this project is to create automated farms.
+One projected problem is that these farms cannot operate inside unloaded chunks.
+Another problem is that if the farm becomes unloaded mid-operation, it can be difficult
+to restart operations, since you must first get it to return to a home position.

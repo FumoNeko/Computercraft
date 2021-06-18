@@ -1,0 +1,25 @@
+-----------------------------
+--[    Network    ]--
+-----------------------------
+rednet.open("back")
+
+-----------------------------
+--[    Filesystem    ]--
+-----------------------------
+term.clear()
+term.setCursorPos(1, 1)
+print("What will you name the file?")
+local filename = read() -- filename
+print("What will you write in the file?")
+local filewrite = read() -- text we will append
+fs.makeDir("saves") -- make directory "saves"
+local file = fs.open("saves/"..filename, "a") --opens the file in append mode
+file.writeLine(filewrite) -- writes this line in the file.
+file.close() -- saves the file
+local file = fs.open("saves/"..filename, "r") -- opens the file in read mode
+local filedata = {} -- creates table called filedata
+repeat -- loop that prints all lines until the file ends.
+  local line = file.readLine()
+  print(line)
+until line == nil
+sleep(5)

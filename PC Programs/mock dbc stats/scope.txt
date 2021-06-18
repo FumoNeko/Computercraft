@@ -1,0 +1,5 @@
+use this to define integer values
+  local mynum = Int64(0x2b89dd1e, 0x3f91df0b)
+  local mynum = Int64(1)
+
+make a mock dbc stat page that handles calculations

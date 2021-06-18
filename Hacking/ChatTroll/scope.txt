@@ -1,0 +1,21 @@
+This program is not my own
+The program goes into wireless chat sessions and then allows the user to manipulate chat
+you can write messages using someone elses username
+you can also kill the server or kill certain users connections.
+
+example:
+find server
+find user 1 -- <- Server ID
+interact user 1 1 -- Open console to write using this user
+-- Use a "?" prefix to write private messages to this user
+-- Use a ":" prefix to write public messages from this user
+-- Messages without prefix are public by default
+-- Use "!exit" to exit the interact view
+kill user 1 1 -- This will kill the users connection to server
+kill server 1 -- This will kill the server and all connections
+-- User a "$" prefix to access the normal shell console
+
+downloads
+mpc A72U1Z9f (https://pastebin.com/A72U1Z9f)
+ccpenlib D0Pf5XpJ (https://pastebin.com/D0Pf5XpJ)
+forum post: https://www.computercraft.info/forums2/index.php?/topic/29300-wireless-chat-manipulation/page__hl__download__fromsearch__1

@@ -1,0 +1,6 @@
+print("Closing Active Files")
+sleep( 1 )
+print("Rebooting")
+sleep( 1 )
+os.reboot()
+print("Rebooted")

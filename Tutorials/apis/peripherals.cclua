@@ -1,0 +1,60 @@
+--[[
+What are peripherals?
+Valid peripherals are:
+Advanced Computer
+Advanced Monitor
+Command Computer
+Computer
+Disk Drive
+Ender Modem
+Monitor
+Networking Cable
+Printer
+Wired Modem
+Wireless Modem
+openperipheral adapters are defined here: http://www.admalledd.com/mc/mod/openperipheral_docs.xhtml
+Github: https://github.com/OpenMods/OpenPeripheral
+Thread: http://www.computercraft.info/forums2/index.php?/topic/13063-mc-16x-openperipheral/
+Documentation: https://raw.githubusercontent.com/OpenMods/OpenPeripheral/master/src/main/resources/openperipheral/lua/docs
+]]
+
+-- peripheral.isPresent(side)
+-- returns true if a peripheral is connected on side
+peripheral.isPresent("right")
+
+-- peripheral.getType(side)
+-- returns type of peripheral connected as a string. If none, return nil
+peripheral.getType("right")
+--example output: if a wired modem is connected return string "wiredModem"
+
+-- peripheral.getMethods(side)
+--Returns a list of the names of all the methods of the peripheral connected on side. If no peripheral is connected, returns nil.
+peripheral.getMethods("right")
+
+-- peripheral.call(side, method)
+--Calls a method on a peripheral. The arguments (apart from side and method) and the return values depending on the method being called. If no peripheral is connected, returns nil.
+peripheral.call("right", method)
+
+-- peripheral.wrap(side)
+--returns a table of functions, allowing you to call peripheral methods as if they were normal lua functions. If no peripheral is connected, returns nil
+--wrapping a peripheral exposes new api functions for you to use. use peripheral.getMethods to see what functions you can use.
+peripheral.wrap("right")
+
+-- peripheral.find(type, [fnFilter(name, object)])
+--Finds an attached peripheral of the given type and if found returns a table of functions, similar to peripheral.wrap, allowing you to call peripheral methods as if they were normal lua functions. If no peripheral of the given type is connected, returns nil. Requires ComputerCraft 1.6 or later.
+-- Don't know correct use for this. Whoops!
+
+--peripheral.getNames()
+--This function returns a table of all the sides that have a peripheral present. If the present peripheral is a wired modem any names of the peripherals that are on the network are also added to the table.
+peripheral.getNames()
+--
+--How to get things on a monitor with CLI?
+monitor top <program>
+
+--What about doing this in the program itself?
+--Whoops, dunno that yet!
+
+--Program is made with 7w4h monitor in mind
+mon = peripheral.wrap("top")
+mon.clear()
+--what happens if you print mon?

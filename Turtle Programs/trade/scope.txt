@@ -1,0 +1,3 @@
+The scope of this project is to accept Zeni and God Zeni in exchange for goods from a chest or resource cache. Ideally a network of resource caches.
+The reason for this is to expand a chest shop inventory from a double chest to the size of a resonant cache or more.
+The ultimate goal would be to then connect this shop to the my main inventory network to conduct trade, restock a chestshop, and collect the money automatically.

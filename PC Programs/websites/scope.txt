@@ -1,0 +1,4 @@
+The scope of this project is to have displayable websites. The websites will be user-generated content.
+The main purpose of this is to create an auction house where people can post small trades and players can search for the cheapest deals.
+The project will require a database of some kind and a search/filter function.
+It will also need to either be able to be manually edited or have some kind of automatic system that uses Forms in order to place the trades on the website.

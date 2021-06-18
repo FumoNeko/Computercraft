@@ -1,0 +1,2 @@
+The scope of this project is simple, create an email client and server to send and receive emails.
+link: http://www.computercraft.info/forums2/index.php?/topic/2501-tcmail-successor-to-computercraft-email/

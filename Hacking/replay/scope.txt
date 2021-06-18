@@ -1,0 +1,6 @@
+pwn encryption noobs.
+Waits for a message to send, records it, then allows the user to play it back.
+This is called a replay attack.
+Can be used to get past doorlocks or passwords that are encrypted without a time window or session identifier.
+
+Since this is a replay attack, this method bypasses encryption.

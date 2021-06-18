@@ -1,0 +1,6 @@
+This scope of this project is to create a snippet of code that will tell a turtle to refuel.
+Most instances of a refuel involve taking the fuel out of a chest and then using the refuel
+the turtle must also be able to navigate to the refuel chest.
+The turtle must calculate the distance it must move in it's program as well as the distance it would take to go back to refuel.
+The turtle must abort an operation before it begins if it does not have enough fuel.
+A program must be able to call this program as a function
