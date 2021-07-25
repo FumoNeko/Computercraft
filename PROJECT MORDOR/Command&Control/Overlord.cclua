@@ -1,0 +1,3 @@
+-- establish which turtles or computers are to be controlled
+-- send messages that activate the turtle
+-- establish protocols for defining parameters and arguments

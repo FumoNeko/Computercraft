@@ -36,7 +36,7 @@ while true do
       rednet.send(id, filedata, "get")
       print("sent: ", nmsg)
     else
-      rednet.send(id, "file doesn't exit", "get")
+      rednet.send(id, "file doesn't exist", "get")
     end
 
   elseif protocol == "delete" then

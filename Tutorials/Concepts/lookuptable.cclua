@@ -1,0 +1,19 @@
+local tableOfValuesToFind = {["test"] = "print 1", ["value"] = "print 2"}
+
+local lookupTable = {["print 1"] = "test", ["print 2"] = "value"}
+
+--checking with a lookup table is easier and done like so:
+
+local value = tableOfValuesToFind.test --# get a value of a table
+
+local indexOfValue = lookupTable[value] --# get the index (key) of that value in a table
+
+print( indexOfValue ) --> test
+
+--You can also generate one dynamically:
+
+local lookupTable = {}
+
+for key, value in pairs(tableOfValuesToFind) do --# iterate through all the keys and values
+  lookupTable[value] = key --# store them into the lookup table
+end
