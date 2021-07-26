@@ -51,6 +51,7 @@ function changePage()
     end
   else
     page = page
+  end
 end
 
 --pagination
