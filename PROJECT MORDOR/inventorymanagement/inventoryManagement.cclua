@@ -113,6 +113,16 @@ local function Search(SearchTerm, Name)
 end
 
 
+--menu
+menu = true
+while menu == true do
+  -- show button
+  button()
+  -- button 1 = paged
+  -- if button 1 is pressed then paged == true
+  -- button 2 = search
+  -- if button 2 is pressed then search == true
+
 --pagination
 while true do
   if page == 1 then
