@@ -1,0 +1,17 @@
+{
+    "Lua.diagnostics.globals": [
+        "turtle",
+        "printError",
+        "write",
+        "textutils",
+        "shell",
+        "fs",
+        "http",
+        "sleep",
+        "wgetAPI",
+        "clearIt",
+        "peripheral",
+        "term",
+        "keys"
+    ]
+}

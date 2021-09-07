@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 --[[ API check
 if fs.exists("event") == false then shell.run("pastebin get UKPy4iiE event") end
 if os.loadAPI("event") == false then error("Failed to load event API") end
@@ -14,7 +15,7 @@ peripheral.wrap("back")
 peripheral.wrap("monitor_7")
 peripheral.wrap("opernperipheral_bridge_0")
 peripheral.wrap("down")
-tblLookup = {}
+local tblLookup = {}
 local page = 1
 
 --lookup table init, used later for search bar
@@ -56,7 +57,7 @@ end
 -- Search
 local function Search(SearchTerm, Name)
   -- Direct match, give a huge score so it'll be on top
-  if SearchTerm === Name then
+  if SearchTerm == Name then
     return 100
   end
 
