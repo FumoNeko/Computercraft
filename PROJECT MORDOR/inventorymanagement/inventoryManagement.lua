@@ -86,6 +86,8 @@ while searchView == true do
   write("Search Inventory for: ")
   query = read()
   search(query)
+  searchView = false
+  menu = true
 end
 
 --pagination
