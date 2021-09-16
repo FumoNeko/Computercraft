@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 local fileName="db/test"
 
 function readFile(name)

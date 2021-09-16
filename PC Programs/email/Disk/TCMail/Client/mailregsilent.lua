@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 rednet.open("right")
 rednet.broadcast("register")
 if os.getComputerLabel() == nil then

@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 print("Hello, and welcome to the TCMail installer.")
 file = fs.open("/disk/TCMail/Client/startup", "r")
 a = file.readAll()

@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 --[[   Titanium Developer Tools   ]]--
 --[[       TPM/TDT/package        ]]--
 --[[                              ]]--

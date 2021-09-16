@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 --Creeper9207 Code: wget substitute--
 os.unloadAPI("/.wget/wgetAPI")
 os.loadAPI("/.wget/wgetAPI")

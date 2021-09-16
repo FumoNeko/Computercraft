@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 function split(sourceString,splittingChar,index)
     results={}
     currentWord=""

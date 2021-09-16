@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 local localChannel=666
 local rest={x=156,y=7,z=263}
 local drop={x=160,y=6,z=264}

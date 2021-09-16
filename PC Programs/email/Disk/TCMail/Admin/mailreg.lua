@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 rednet.open("right")
 rednet.broadcast("register")
 print("Registering ID with the server...")

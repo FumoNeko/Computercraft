@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 rednet.open("right")
 rednet.broadcast("readmail")
 a, messagep = rednet.receive(1)

@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 print("Would you like to register an email with the server?")
 input = read()
 if input == "yes" then

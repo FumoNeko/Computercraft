@@ -1,3 +1,4 @@
+---@diagnostic disable: unbalanced-assignments, deprecated
 local args = {...}
 
 if not args[1] then

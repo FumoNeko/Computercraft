@@ -1,3 +1,4 @@
+---@diagnostic disable: deprecated, lowercase-global
 print("Running eMail server")
 -- Loading Code Begin
 n=0

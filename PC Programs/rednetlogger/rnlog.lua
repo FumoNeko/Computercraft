@@ -4,7 +4,7 @@
 -- pastebin get wCBNGPiy rnlog
 local function open()
 
-  p = peripheral.getNames()
+  local p = peripheral.getNames()
   local modem = nil
   local for i = 1, #p do --seaching for modems
     if peripheral.getType(p[i]) == "modem" then
@@ -36,7 +36,7 @@ end
 local function stop() --stop on keypress
 
   while true do
-    a = os.pullEvent("key")
+    local a = os.pullEvent("key")
     if a == "key" then
       break
     end

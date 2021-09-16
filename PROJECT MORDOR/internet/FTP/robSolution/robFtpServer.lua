@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 rednet.open("back")
 rednet.host("ftp", "testserver")
 

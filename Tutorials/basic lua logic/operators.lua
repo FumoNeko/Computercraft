@@ -4,7 +4,7 @@
 -- The "=" is an assignment operator used to assign the value on the right to the variable on the left
 a = 10
 b = 20
-jordan = "gay"
+jordan = "bad"
 
 -- the "==" operator checks whether two given operands are equal or not. If true, return true. else false
 5==5

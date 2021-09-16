@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 rednet.open("right")
 rednet.broadcast("reboot")
 print("Rebooting Remote Server...")

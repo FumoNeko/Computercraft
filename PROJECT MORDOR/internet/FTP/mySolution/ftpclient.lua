@@ -22,7 +22,7 @@ rednet.open("back")
 -----------------------------
 --[ Functions ]--
 -----------------------------
-function split(string, delimiter)
+local function split(string, delimiter)
   result = {}
   for token in string.gmatch(string, "%a+") do
     table.insert(result, token)
@@ -30,12 +30,12 @@ function split(string, delimiter)
   return result
 end
 
-function clearScreen()
+local function clearScreen()
   term.clear()
   term.setCursorPos(1, 1)
 end
 
-function printUsage()
+local function printUsage()
   print("Usage: ")
   print("clear")
   print("connect <server name>")
@@ -46,7 +46,7 @@ function printUsage()
   print("exit")
 end
 
-function main()
+local function main()
 -----------------------------
       --[ Input ]--
 -----------------------------

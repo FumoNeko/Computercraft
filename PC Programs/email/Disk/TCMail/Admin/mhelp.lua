@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 print("Welcome to the TCMail Help Program. Here is the list of commands for your version:")
 sleep( 1 )
 print("1. mail\n2. mailreg\n3. mailreq\n4. emailreg\n5. rbt")

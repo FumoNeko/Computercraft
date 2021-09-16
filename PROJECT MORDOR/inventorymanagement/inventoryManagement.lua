@@ -15,20 +15,24 @@ peripheral.wrap("back")
 peripheral.wrap("monitor_7")
 peripheral.wrap("opernperipheral_bridge_0")
 peripheral.wrap("down")
-local tblLookup = {}
 local page = 1
 
---lookup table init, used later for search bar
-for i = 0, 190 do
-  local c = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_"..tostring(i))
-  local data = c.getStoredItems()
-  --  local data2 = c.getMaxStoredItems()
-  --  print(data["display_name"])
-  tblLookup[i] = data["display_name"]
-  --  print(data["qty"].." / "..data2)
+-- functions
+local function search(searchTerm)
+  for i = 0, 190 do
+    local c = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_"..tostring(i))
+    local data = c.getStoredItems()
+    local data2 = c.getMaxStoredItems()
+    --  print(data["display_name"])
+    local qry = string.find(data["display_name"], searchTerm)
+    if qry ~= nil then
+      print(data["display_name"])
+      print(data["qty"].." / "..data2)
+    end
+    --  print(data["qty"].." / "..data2)
+  end
 end
 
---functions
 local function centerWrite(text)
   local width, height = term.getSize()
   local x, y = term.getCursorPos()
@@ -54,78 +58,38 @@ local function changePage()
   end
 end
 
--- Search
-local function Search(SearchTerm, Name)
-  -- Direct match, give a huge score so it'll be on top
-  if SearchTerm == Name then
-    return 100
+
+-- Main Menu
+local menu = true
+while menu == true do
+  print("1. Search\n2. Paged View")
+  write("Enter a number: ")
+  menuChoice = read()
+  menuChoice = tonumber(menuChoice)
+  if menuChoice == 1 then
+    searchView = true
+    menu = false
+    break
+  elseif menuChoice == 2 then
+    pagedView = true
+    menu = false
+    break
   end
-
-  -- Localize so we don't recompute these a lot
-  local numTerm, numName = #SearchTerm, #Name
-
-  -- Get edit distance using Damerau-Levenshtein algorithm
-  -- ? Because this helps with fuzzy matching of typos
-  local Distance = EditDistance(SearchTerm, Name)
-  local LengthDiff = math.abs(numName-numTerm)
-
-  -- Find if they start with the same character
-  -- ? Because words that start the same sound the same and people think thats a good metric
-  local StartsWith = string.sub(Name,1,1) == string.sub(SearchTerm,1,1)
-
-  -- Find how much of the term can be matched
-  -- ? Because it helps us get better matches of incomplete search terms while they type
-  local MatchAmount = 0
-  for i = 1, numTerm do
-    if string.find(Name, string.sub(SearchTerm, 1,i), 1, true) then
-      MatchAmount = i
-    else
-      break
-    end
-  end
-
-  -- Find if it at least has the letters of the search in order
-  -- ? Because it enables shorthand search and well as helps with deletion typos
-  local OrderedSearchTermTable = table.create(numTerm)
-  for i = 1, numTerm do
-    table.insert(OrderedSearchTermTable, ".*"..string.sub(SearchTerm,i,i))
-  end
-  local OrderedFind = string.find(Name, table.concat(OrderedSearchTermTable))
-
-  -- Find if it has the search directly wihin, and if thats a solo word or just within some word
-  -- ? Direct find is obviously helpful, and determining if that find is a sub word (eg: car in carpet)
-  -- helps us weigh the value
-  local Find,endFind,FindPiece
-  if MatchAmount == numTerm then
-    Find.endFind = string.find(Name, SearchTerm, 1, true)
-    FindPiece = string.find(string.sub(Name, endFind or 1,endFind or 1), "%w") and true or false
-  end
-
-  -- Define order based on results (Values may be tweaked to find a good feel)
-  local Score =
-    (StartsWith and 4 or 0) +
-    (Find and (findPiece and 6 or 8) or 0) +
-    (OrderedFind and 2 or 0) +
-    (MatchAmount) +
-    (MatchAmount/numTerm >= 0.75 and 4 or 0) +
-    ((Distance or LengthDiff) - LengthDiff)
-
-  return Score
+  else
+    print("Invalid input. Enter either 1 or 2.")
+    menu = false
+    menu = true
 end
 
-
---menu
-menu = true
-while menu == true do
-  -- show button
-  button()
-  -- button 1 = paged
-  -- if button 1 is pressed then paged == true
-  -- button 2 = search
-  -- if button 2 is pressed then search == true
+-- Search
+while searchView == true do
+  write("Search Inventory for: ")
+  query = read()
+  search(query)
+end
 
 --pagination
-while true do
+while pagedView == true do
   if page == 1 then
     term.clear()
     term.setCursorPos(1, 1)
@@ -497,28 +461,3 @@ for i = 0, 190 do
   c["cache"..tostring(i)] = "tile_thermalexpansion_cache_resonant_name_"..tostring(i)
   peripheral.wrap(c["cache"..tostring(i)])
 end
-
-
-
-
-
---searchbar
-Logical Process
-1. No search query, computer shows all results
-2. user inputs search query
-3. computer HIDES irrelevant results
-4. computer SHOWS relevant results
-
---pagination
-page = 1
-if page == 1 then
-for i = 0, x do
-(show results that fit on one page)
-end
-os.pullEvent("key")
-if key == keys.right then
-page = page + 1
-elseif key == keys.left then
-page = page - 1
-if page <= 0 then page = 1
-]]

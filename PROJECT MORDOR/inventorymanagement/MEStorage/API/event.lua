@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global, undefined-global
 local events={}
 
 function add(name)

@@ -12,6 +12,20 @@
         "clearIt",
         "peripheral",
         "term",
-        "keys"
+        "keys",
+        "rednet",
+        "parallel",
+        "event",
+        "utils",
+        "x",
+        "y",
+        "z",
+        "colors",
+        "null",
+        "redstone",
+        "LANClient"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-field"
     ]
 }

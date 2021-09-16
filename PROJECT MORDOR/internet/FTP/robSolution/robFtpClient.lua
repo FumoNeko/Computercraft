@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 rednet.open("back")
 term.clear()
 term.setCursorPos(1, 1)

@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global, deprecated, lowercase-global
 local sendChannel=666
 local pingLimit=5
 
