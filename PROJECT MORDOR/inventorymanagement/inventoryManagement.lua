@@ -74,11 +74,11 @@ while menu == true do
     pagedView = true
     menu = false
     break
-  end
   else
     print("Invalid input. Enter either 1 or 2.")
     menu = false
     menu = true
+  end
 end
 
 -- Search
