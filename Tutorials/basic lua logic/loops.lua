@@ -71,7 +71,7 @@ repeat
   print("your number is: "..x)
   print("we are on loop: "..i)
   i = i + 1
-until i = 5
+until i == 5
 
 --Nested loops
 -- You can put loops inside of other loops

@@ -11,3 +11,41 @@ the system will need to be able to sort items physically as well as in the form 
 There must also exist crafting turtles to craft some of the objects.
 The design must be modular to benefit the community. It should be able to define machines and identify which crafting recipes are necessary.
 The system should be able to take a bank of items and identify what is craftable/smeltable/transformative.
+
+
+
+
+notes from the file
+
+--[[ stolen code from terminal glasses
+t = peripheral.wrap(tile_thermalexpansion_cache_resonant_name_0)
+capacity = t.getMaxEnergyStored("")
+amount = t.getEnergyStored("")
+
+
+
+-- working code
+cache = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_0")
+local data = cache.getStoredItems()
+local data2 = cache.getMaxStoredItems()
+print(data["display_name"])
+print(data["qty"].." / "..data2)
+
+--working code multiple modems
+cache = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_1")
+cache2 = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_2")
+local cdata = cache.getStoredItems()
+local cdata2 = cache.getMaxStoredItems()
+local c2data = cache2.getStoredItems()
+local c2data2 = cache2.getMaxStoredItems()
+print(cdata["display_name"])
+print(cdata["qty"].." / "..cdata2)
+print(c2data["display_name"])
+print(c2data["qty"].." / "..c2data2)
+
+-- pervious working code
+local c = {}
+for i = 0, 190 do
+  c["cache"..tostring(i)] = "tile_thermalexpansion_cache_resonant_name_"..tostring(i)
+  peripheral.wrap(c["cache"..tostring(i)])
+end

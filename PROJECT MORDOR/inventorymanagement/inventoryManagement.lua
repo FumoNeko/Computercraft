@@ -1,21 +1,9 @@
 ---@diagnostic disable: undefined-field
---[[ API check
-if fs.exists("event") == false then shell.run("pastebin get UKPy4iiE event") end
-if os.loadAPI("event") == false then error("Failed to load event API") end
-
-if fs.exists("data") == false then shell.run("pastebin get LnvzL7ur data") end
-if os.loadAPI("data") == false then error("Failed to load data API") end
-
-if fs.exists("utils") == false then shell.run("pastebin get dyvydHtK utils") end
-if os.loadAPI("utils") == false then error("Failed to load utils API") end
-]]
-
 -- initialization
 peripheral.wrap("back")
 peripheral.wrap("monitor_7")
 peripheral.wrap("opernperipheral_bridge_0")
 peripheral.wrap("down")
-local page = 1
 local tableLookup = {
   ["tile_thermalexpansion_cache_resonant_name_0"] = "Oak Sapling",
   ["tile_thermalexpansion_cache_resonant_name_1"] = "Bronze Ingot",
@@ -210,21 +198,26 @@ local tableLookup = {
   ["tile_thermalexpansion_cache_resonant_name_190"] = "Oak Wood Slab",
 }
 
+local searchView = nil
+local pagedView = nil
+local page = 1
 local w, h = term.getSize() -- usable lines = h - 2  (19 usable in default so usable = 17)
 local usableLines = h - 2
-local numberOfObjects = tableScan()
-local maxPages = math.ceil(numberOfObjects/usableLines)
 local pagecounter = 0
 local innerpagecounter1 = 0
 local innerpagecounter2 = 0
+
 -- functions
 local function tableScan()
-  objects = 1
+  local objects = 1
   for k, v in pairs(tableLookup) do
     objects = objects + 1
   end
   return objects
 end
+
+local numberOfObjects = tableScan()
+local maxPages = math.ceil(numberOfObjects/usableLines)
 
 local function search(searchTerm)
   for k, v in pairs(tableLookup) do
@@ -235,38 +228,32 @@ local function search(searchTerm)
       local data2 = c.getMaxStoredItems()
       term.clear()
       print(data["display_name"])
-      print(data[qty].." / "..data2)
-      break
-    end
-  end
-
-  --[[ deprecated
-  for i = 0, 190 do
-    local c = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_"..tostring(i))
-    local data = c.getStoredItems()
-    local data2 = c.getMaxStoredItems()
-    --  print(data["display_name"])
-    local qry = string.find(data["display_name"], searchTerm)
-    if qry ~= nil then
-      print(data["display_name"])
       print(data["qty"].." / "..data2)
       break
     end
-    --  print(data["qty"].." / "..data2)
   end
 end
-]]
+
+
 -- pregenerated search
 -- create a pregenerated search for common ore "iron, copper, platinum, etc."
 local function preSearch(num)
   if num == 1 then
+    print("this submenu1 isn't done yet")
   elseif num == 2 then
+    print("this submenu2 isn't done yet")
   elseif num == 3 then
+    print("this submenu3 isn't done yet")
   elseif num == 4 then
+    print("this submenu4 isn't done yet")
   elseif num == 5 then
+    print("this submenu5 isn't done yet")
   elseif num == 6 then
+    print("this submenu6 isn't done yet")
   elseif num == 7 then
+    print("this submenu7 isn't done yet")
   end
+end
 
 local function centerWrite(text)
   local width, height = term.getSize()
@@ -297,7 +284,7 @@ local function changePage()
     term.setCursorPos(1, 3)
   elseif key == keys.q then
     pagedView = false
-    menu = true
+    MENU = true
   else
     pagecounter = pagecounter
     changePage()
@@ -306,27 +293,27 @@ end
 
 
 -- Main Menu
-local menu = true
-while menu == true do
+MENU = true
+while MENU == true do
   print("1. Search\n2. Paged View\n3.Pregenerated Search")
   write("Enter a number: ")
-  menuChoice = read()
+  local menuChoice = read()
   menuChoice = tonumber(menuChoice)
   if menuChoice == 1 then
     searchView = true
-    menu = false
+    MENU = false
     break
   elseif menuChoice == 2 then
     pagedView = true
-    menu = false
+    MENU = false
     break
   elseif menuChoice == 3 then
     local submenu = true
-    menu = false
+    MENU = false
     if submenu == true then
       print("1.Ore\n2.Intermediate Products\n3. Machines/Production\n4.Logistics\n5.Tools\n6.Combat\n7.Utility")
       write("Enter a number:")
-      submenuChoice = read()
+      local submenuChoice = read()
       submenuChoice = tonumber(submenuChoice)
       if submenuChoice == 1 then
         submenu = false
@@ -353,18 +340,18 @@ while menu == true do
     end
   else
     print("Invalid input. Enter either 1 or 2.")
-    menu = false
-    menu = true
+    MENU = false
+    MENU = true
   end
 end
 
 -- Search
 while searchView == true do
   write("Search Inventory for: ")
-  query = read()
+  local query = read()
   search(query)
   searchView = false
-  menu = true
+  MENU = true
 end
 
 --pagination
@@ -386,45 +373,10 @@ while pagedView == true do
         local c = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_"..tostring(i))
         local data = c.getStoredItems()
         local data2 = c.getMaxStoredItems()
-        print(data["display_name"]..data["qty"].." / "..data2)
+        print(data["display_name"].." / "..data["qty"].." / "..data2)
         if liney >= h or c == nil then
           changePage()
         end
       end
     end
-end
-
---can display about 8 results, dedicate 1 line to page number and another to the search bar and there will be no lines left
-
---[[ stolen code from terminal glasses
-t = peripheral.wrap(tile_thermalexpansion_cache_resonant_name_0)
-capacity = t.getMaxEnergyStored("")
-amount = t.getEnergyStored("")
-
-
-
--- working code
-cache = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_0")
-local data = cache.getStoredItems()
-local data2 = cache.getMaxStoredItems()
-print(data["display_name"])
-print(data["qty"].." / "..data2)
-
---working code multiple modems
-cache = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_1")
-cache2 = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_2")
-local cdata = cache.getStoredItems()
-local cdata2 = cache.getMaxStoredItems()
-local c2data = cache2.getStoredItems()
-local c2data2 = cache2.getMaxStoredItems()
-print(cdata["display_name"])
-print(cdata["qty"].." / "..cdata2)
-print(c2data["display_name"])
-print(c2data["qty"].." / "..c2data2)
-
--- pervious working code
-local c = {}
-for i = 0, 190 do
-  c["cache"..tostring(i)] = "tile_thermalexpansion_cache_resonant_name_"..tostring(i)
-  peripheral.wrap(c["cache"..tostring(i)])
 end
