@@ -198,12 +198,12 @@ local tableLookup = {
   ["tile_thermalexpansion_cache_resonant_name_190"] = "Oak Wood Slab",
 }
 
-local searchView = nil
-local pagedView = nil
-local page = 1
+local searchView = false
+local pagedView = false
 local w, h = term.getSize() -- usable lines = h - 2  (19 usable in default so usable = 17)
-local usableLines = h - 2
-local pagecounter = 0
+local usableLines = h - 3
+local page = 0
+local pageDisplay = 1
 local innerpagecounter1 = 0
 local innerpagecounter2 = 0
 
@@ -221,14 +221,14 @@ local maxPages = math.ceil(numberOfObjects/usableLines)
 
 local function search(searchTerm)
   for k, v in pairs(tableLookup) do
-    local qry = string.find(v)
+    local qry = string.find(v ,searchTerm)
     if qry ~= nil then
       local c = peripheral.wrap(k)
       local data = c.getStoredItems()
       local data2 = c.getMaxStoredItems()
       term.clear()
-      print(data["display_name"])
-      print(data["qty"].." / "..data2)
+      term.setCursorPos(1, 1)
+      print(data["display_name"].." / "..data["qty"].." / "..data2)
       break
     end
   end
@@ -265,28 +265,30 @@ end
 local function changePage()
   local event, key = os.pullEvent("key")
   if key == keys.right then
-    pagecounter = pagecounter + 1
-    if pagecounter >= maxPages - 1 then
-      pagecounter = maxPages - 1
+    page = page + 1
+    pageDisplay = pageDisplay + 1
+    if page >= maxPages - 1 then
+      page = maxPages - 1
     end
     term.clear()
     term.setCursorPos(1, 1)
-    centerWrite("Page "..page.." of"..maxPages)
+    centerWrite("Page "..pageDisplay.." of "..maxPages)
     term.setCursorPos(1, 3)
   elseif key == keys.left then
-    pagecounter = pagecounter - 1
-    if pagecounter <= -1 then
-      pagecounter = 0
+    page = page - 1
+    pageDisplay = pageDisplay - 1
+    if page <= -1 then
+      page = 0
     end
     term.clear()
     term.setCursorPos(1, 1)
-    centerWrite("Page "..page.." of"..maxPages)
+    centerWrite("Page "..pageDisplay.." of "..maxPages)
     term.setCursorPos(1, 3)
   elseif key == keys.q then
     pagedView = false
     MENU = true
   else
-    pagecounter = pagecounter
+    page = page
     changePage()
   end
 end
@@ -358,12 +360,12 @@ end
 while pagedView == true do
   term.clear()
   term.setCursorPos(1, 1)
-  centerWrite("Page "..page.." of"..maxPages)
+  centerWrite("Page "..pageDisplay.." of "..maxPages)
   term.setCursorPos(1, 3)
-    for i = page+pagecounter, maxPages do
-      if page > 1 then
-        innerpagecounter1 = usableLines * page - usableLines
-        innerpagecounter2 = usableLines * page - 1 - usableLines
+    repeat
+      if pageDisplay > 1 then
+        innerpagecounter1 = usableLines * pageDisplay - usableLines
+        innerpagecounter2 = usableLines * pageDisplay - 1 - usableLines
       else
         innerpagecounter1 = 0
         innerpagecounter2 = 0
@@ -374,9 +376,9 @@ while pagedView == true do
         local data = c.getStoredItems()
         local data2 = c.getMaxStoredItems()
         print(data["display_name"].." / "..data["qty"].." / "..data2)
-        if liney >= h or c == nil then
+        if liney >= usableLines or i == nil then
           changePage()
         end
       end
-    end
+    until pagedView == false
 end
