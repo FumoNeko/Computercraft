@@ -200,8 +200,9 @@ local tableLookup = {
 
 local searchView = false
 local pagedView = false
-local w, h = term.getSize() -- usable lines = h - 2  (19 usable in default so usable = 17)
-local usableLines = h - 3
+local w, h = term.getSize() -- usable lines = h - 1  (19 usable in default so usable = 18), by default only 16 can be used since 1 line is for page, 1 line is linebreak, and 1 line is terminal
+local usableLines = h - 1
+local usableLinesForRecords = h - 3
 local page = 0
 local pageDisplay = 1
 local innerpagecounter1 = 0
@@ -217,7 +218,7 @@ local function tableScan()
 end
 
 local numberOfObjects = tableScan()
-local maxPages = math.ceil(numberOfObjects/usableLines)
+local maxPages = math.ceil(numberOfObjects/usableLinesForRecords)
 
 local function search(searchTerm)
   for k, v in pairs(tableLookup) do
@@ -274,22 +275,25 @@ local function changePage()
     term.setCursorPos(1, 1)
     centerWrite("Page "..pageDisplay.." of "..maxPages)
     term.setCursorPos(1, 3)
-  elseif key == keys.left then
-    page = page - 1
-    pageDisplay = pageDisplay - 1
-    if page <= -1 then
-      page = 0
-    end
-    term.clear()
-    term.setCursorPos(1, 1)
-    centerWrite("Page "..pageDisplay.." of "..maxPages)
-    term.setCursorPos(1, 3)
-  elseif key == keys.q then
-    pagedView = false
-    MENU = true
-  else
-    page = page
-    changePage()
+-- Don't let page display 0 or negative numbers
+elseif key == keys.left then
+  page = page - 1
+  pageDisplay = pageDisplay - 1
+  if page <= -1 or pageDisplay <= 0 then
+    page = 0
+    pageDisplay = 1
+  end
+  term.clear()
+  term.setCursorPos(1, 1)
+  centerWrite("Page "..pageDisplay.." of "..maxPages)
+  term.setCursorPos(1, 3)
+elseif key == keys.q then
+  pagedView = false
+  MENU = true
+else
+  page = page
+  pageDisplay = pageDisplay
+  changePage()
   end
 end
 
@@ -314,7 +318,7 @@ while MENU == true do
     MENU = false
     if submenu == true then
       print("1.Ore\n2.Intermediate Products\n3. Machines/Production\n4.Logistics\n5.Tools\n6.Combat\n7.Utility")
-      write("Enter a number:")
+      write("Enter a number: ")
       local submenuChoice = read()
       submenuChoice = tonumber(submenuChoice)
       if submenuChoice == 1 then
@@ -364,21 +368,20 @@ while pagedView == true do
   term.setCursorPos(1, 3)
     repeat
       if pageDisplay > 1 then
-        innerpagecounter1 = usableLines * pageDisplay - usableLines
-        innerpagecounter2 = usableLines * pageDisplay - 1 - usableLines
+        innerpagecounter1 = usableLines * pageDisplay - usableLines - 2
+        innerpagecounter2 = usableLines * pageDisplay - 2 - usableLines
       else
         innerpagecounter1 = 0
         innerpagecounter2 = 0
       end
-      for i = 0+innerpagecounter1, usableLines+innerpagecounter2 do
-        local linex, liney = term.getCursorPos()
+      local i1 = 0 + innerpagecounter1
+      local i2 = usableLines + innerpagecounter2 - 3
+      for i = i1, i2 do
         local c = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_"..tostring(i))
         local data = c.getStoredItems()
         local data2 = c.getMaxStoredItems()
         print(data["display_name"].." / "..data["qty"].." / "..data2)
-        if liney >= usableLines or i == nil then
-          changePage()
-        end
       end
+      changePage()
     until pagedView == false
 end
