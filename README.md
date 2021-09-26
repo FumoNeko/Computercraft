@@ -2,6 +2,7 @@
 TODO:
 
 inventoryManagement.lua: 
+
     + Pregenerated search for Iron, Copper, Gold, and other common ore types
     
     +̶ C̶r̶e̶a̶t̶e̶ a̶ l̶o̶o̶k̶u̶p̶ t̶a̶b̶l̶e̶ t̶h̶a̶t̶ c̶o̶n̶t̶a̶i̶n̶s̶ k̶e̶y̶ v̶a̶r̶i̶a̶b̶l̶e̶ i̶t̶e̶m̶N̶a̶m̶e̶ a̶n̶d̶ v̶a̶l̶u̶e̶ v̶a̶r̶i̶a̶b̶l̶e̶ "̶t̶i̶l̶e̶_̶t̶h̶e̶r̶m̶a̶l̶e̶x̶p̶a̶n̶s̶i̶o̶n̶_̶c̶a̶c̶h̶e̶_̶r̶e̶s̶o̶n̶a̶n̶t̶_̶n̶a̶m̶e̶n̶_̶"̶.̶.̶i̶ a̶n̶d̶  c̶o̶m̶p̶a̶r̶e̶s̶ s̶e̶a̶r̶c̶h̶ s̶t̶r̶i̶n̶g̶ v̶a̶r̶ "̶s̶e̶a̶r̶c̶h̶"̶
