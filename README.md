@@ -29,11 +29,14 @@ inventoryManagement.lua:
     requests
 
 ftpclient.lua:
+
 ftpserver.lua:
 
 
 What are the common ores?
+
     Vanilla:
+    
         + Coal
         + Iron
         + Gold
@@ -42,6 +45,7 @@ What are the common ores?
         + Redstone
         + Glowstone
     Thermal Expansion:
+    
         + Platinum "Shiny Ore" -> Platinum Ingot
         + Nickel "Ferrous Ore" -> Invar Ingot
         + Copper - > Copper Ingot
