@@ -69,6 +69,7 @@ What are the common ores?
         
 
 What other common search categories would there be?
+
     + Logistics (piping wiring etc)
     + Machines/Production
     + Intermediate products
