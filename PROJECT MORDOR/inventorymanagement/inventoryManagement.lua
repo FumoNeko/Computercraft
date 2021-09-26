@@ -378,9 +378,15 @@ while pagedView == true do
       local i2 = usableLines + innerpagecounter2 - 3
       for i = i1, i2 do
         local c = peripheral.wrap("tile_thermalexpansion_cache_resonant_name_"..tostring(i))
-        local data = c.getStoredItems()
-        local data2 = c.getMaxStoredItems()
-        print(data["display_name"].." / "..data["qty"].." / "..data2)
+        if c ~= nil then
+          local data = c.getStoredItems()
+            if data ~=nil then
+              local data2 = c.getMaxStoredItems()
+              if data2 ~= nil then
+                print(data["display_name"].." / "..data["qty"].." / "..data2)
+              end
+            end
+        end
       end
       changePage()
     until pagedView == false
